@@ -275,3 +275,9 @@ main{
 .btn:active{
   transform: scale(0.98);
 }
+
+@media(max-width:500px){
+  .cart{
+    width: calc(100vw - 1rem);
+  }
+}

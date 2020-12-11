@@ -43,6 +43,10 @@ function addProductToDom(product){
     cardContent.style.transform = 'translateY(-280px)';
     prodImage.classList.add('darken')
   })
+  prodImage.onClick = () => {
+    cardContent.style.transform = 'translateY(-280px)';
+    prodImage.classList.add('darken')
+  }
   cardContent.addEventListener('mouseleave', () => {
     cardContent.style.transform = 'translateY(0)';
     prodImage.classList.remove('darken')
