@@ -29,7 +29,7 @@ header{
   top:70px;
   background-color: rgb(255, 255, 255);
   width: 25vw;
-  min-width: 200px;
+  min-width: 300px;
   min-height: 100px;
   z-index: 50;
   border-radius: 0 0 5px 5px;
@@ -153,8 +153,8 @@ header .nav .btn{
   align-items: center;
   justify-content: center;
   position: absolute;
-  right:-5px;
-  top: -5px;
+  right:-0.3rem;
+  top: -0.3rem;
   font-size: 0.8rem;
   border-radius: 50%;
   background-color: white;
