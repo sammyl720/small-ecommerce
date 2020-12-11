@@ -1,3 +1,4 @@
+const mainEl = document.querySelector('#main')
 const productContainer = document.querySelector('.products-container')
 const cartBtn = document.querySelector('#cart-btn')
 const cartEl = document.querySelector('.cart')
@@ -5,6 +6,8 @@ const cartItemsEl = document.querySelector('.cart-items')
 const cartClose = document.querySelector('.cart-close')
 const qtyCircle = document.querySelector('#cart-btn .circle')
 const cart = new Cart()
+
+
 if(cart.cartQty === 0){
   qtyCircle.style.opacity = '0';
   qtyCircle.style.display = 'hidden';
@@ -33,6 +36,9 @@ function addProductToDom(product){
       </div>
     </div>
     <div class="card-content">
+      <button class="content-close">
+        <i class="fas fa-times"></i>
+      </button>
       <div class="product-info">
         <h3 class="product-title">${product.name}</h3>
         <div class="product-price">$${parseInt(product.price)}</div>
@@ -46,6 +52,7 @@ function addProductToDom(product){
 
   const prodImage = newProduct.querySelector('.card-image');
   const cardContent = newProduct.querySelector('.card-content');
+  const closeBtn = newProduct.querySelector('.content-close');
   const addToCartBtn = newProduct.querySelector('.add-to-cart')
   prodImage.addEventListener('mouseenter', () => {
     cardContent.style.transform = 'translateY(-280px)';
@@ -58,7 +65,10 @@ function addProductToDom(product){
   cardContent.addEventListener('mouseleave', () => {
     cardContent.style.transform = 'translateY(0)';
     prodImage.classList.remove('darken')
-
+  })
+  closeBtn.addEventListener('click', () => {
+    cardContent.style.transform = 'translateY(0)';
+    prodImage.classList.remove('darken')
   })
   addToCartBtn.addEventListener('click', (e) => {
     addProductToCart(product)
@@ -77,6 +87,10 @@ function addProductToDom(product){
 }
 
 function addProductToCart(product){
+  if(cart.cartQty === 0){
+    qtyCircle.style.opacity = '0';
+    qtyCircle.style.display = 'hidden';
+  }
   cart.addProductToCart(product)
   const {total, subTotal, taxTotal} = cart.getCartTotal()
 
@@ -94,26 +108,26 @@ function addProductToCart(product){
     let itemEl = document.createElement('div')
     itemEl.classList.add('cart-item')
     itemEl.innerHTML = `
-      <div style="background-image: url(${cartItem.product_image});" class="cart-item-img"></div>
+    <div style="background-image: url(${cartItem.product_image});" class="cart-item-img"></div>
       <div class="cart-item-name">${cartItem.name}</div>
-      <div class="cart-item-dets">
-        <div class='cart-qty-toolkit'>
-        <button class='cart-qty-increase qty-btn'>
-          <i class='fas fa-sort-up'></i>
-        </button>
-        <span class="cart-item-qty">${cartItem.qty}</span>
-        <button class='cart-qty-decrease qty-btn'>
-          <i class='fas fa-sort-down'>
-        </i>
-        </button>
+        <div class="cart-item-dets">
+          <div class='cart-qty-toolkit'>
+            <button class='cart-qty-increase qty-btn' id='incre-prod-${cartItem.id}'>
+              <i class='fas fa-sort-up'></i>
+            </button>
+            <span class="cart-item-qty">${cartItem.qty}</span>
+            <button class='cart-qty-decrease qty-btn'>
+              <i class='fas fa-sort-down'>
+</i>
+            </button>
+          </div>
+          <span class="cart-item-price">$${parseInt(cartItem.price)} <small>ea.</small></span>
         </div>
-      <span class="cart-item-price">$${parseInt(cartItem.price)} <small>ea.</small></span></div>
+      </div>
     </div>
     `
-
-    let incrementQtyBtn = itemEl.querySelector('.cart-qty-increase')
-    let decrementtQtyBtn = itemEl.querySelector('.cart-qty-decrease')
     cartItemsEl.appendChild(itemEl)
+    // addCartHandlers()
   })
   cartItemsEl.innerHTML += `
   <div class="cart-sub-total">
@@ -134,3 +148,14 @@ function addProductToCart(product){
 for(let i = 0; i < products.length;i++){
   addProductToDom(products[i])
 }
+
+// let increaseBtns = document.querySelectorAll('.cart-qty-increase')
+// function addCartHandlers(){
+//   increaseBtns = document.querySelectorAll('.cart-qty-increase')
+//   for(let i = 0; i < increaseBtns.length;i++){
+//     let btn = document.getElementById(increaseBtns[i].id)
+//     btn.addEventListener('click', () => {
+//       console.log('as')
+//     }) 
+//   }
+// }

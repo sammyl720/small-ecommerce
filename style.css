@@ -20,7 +20,9 @@ header{
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
+  /* position: relative; */
+  position: fixed;
+
   z-index: 99;
 }
 
@@ -51,22 +53,26 @@ header{
 
 .cart-item-dets .cart-qty-toolkit{
   display:flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   align-items: center;
-  justify-content: center;
-  margin-right: 0.5rem;
-  height: 2rem;
+  justify-content: space-evenly;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .cart-item-dets .cart-item-price{
-  width: 3.7rem;
+  width: 4rem;
 }
 .qty-btn{
-  /* font-size: 1rem; */
-  font-size: 1rem;
+  font-size: 1.3rem;
   border:none;
+  color:#52057b;
+  position: relative;
   background-color: transparent;
+  
 }
+
+
 .qty-btn:focus{
   outline: none;
 }
@@ -141,14 +147,14 @@ header{
   justify-content: space-between;
   max-height: 100%;
 }
-.cart-close {
+.cart-close, .content-close {
   position: absolute;
   right:0.5rem;
   top:0.5rem;
   color:#52057b;
   outline: none;
   border: none;
-  background-color: white;
+  background-color: transparent;
   cursor: pointer;
 }
 header .nav{
@@ -160,7 +166,6 @@ header .nav{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
   color:white;
 }
 
@@ -201,7 +206,7 @@ header .nav .btn{
 }
 main{
   width: 95%;
-  margin:1rem auto;
+  margin:5rem auto;
   min-width: 360px;
   z-index: 10;
 }
@@ -215,16 +220,12 @@ main{
 
 .card{
   width:400px;
-  /* height: 500px; */
   height: 280px;
   position: relative;
   background-color: #fff;
   box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
   border-radius: 10px;
   margin:0.5rem;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: space-between; */
   padding-bottom: 1rem;
   z-index: 1;
   overflow: hidden;
@@ -271,6 +272,7 @@ main{
   width: 100%;
   transition: transform 0.8s ease-in;
   transform: translateY(0);
+  position: relative;
 }
 
 
