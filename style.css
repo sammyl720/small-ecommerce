@@ -144,6 +144,7 @@ header .nav .btn{
   background-color: transparent;
   color:white;
   position: relative;
+  margin-left: auto;
 }
 
 .nav .btn .circle{
