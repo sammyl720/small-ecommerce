@@ -1,0 +1,11 @@
+.btn{
+  cursor: pointer;
+  outline: none;
+}
+
+.btn:focus{
+  outline: none;
+}
+.btn:active{
+  transform: scale(0.98);
+}

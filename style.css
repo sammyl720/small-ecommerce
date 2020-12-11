@@ -1,36 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap");
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Poppins", sans-serif;
-  background-color: #f6f5f5;
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
-  margin: 0;
-}
-
-header {
-  background-color: #52057b;
-  width: 100vw;
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* position: relative; */
-  position: fixed;
-  z-index: 99;
-}
-
 .cart {
   position: absolute;
   right: 0.5rem;
-  top: 3rem;
+  top: 2.8rem;
   background-color: white;
   width: 25vw;
-  min-width: 300px;
+  min-width: 20rem;
+  max-width: calc(100vw - 1rem);
   max-height: calc(100vh - 8rem);
   overflow-y: scroll;
   z-index: 50;
@@ -40,7 +16,7 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0.5rem;
+  padding: 0 0.5rem;
   transition: transform 0.5s ease-in;
   transform: translateY(-100%);
 }
@@ -127,8 +103,8 @@ header {
 }
 
 .cart-item .cart-item-img {
-  width: 50px;
-  height: 50px;
+  width: 3rem;
+  height: 3rem;
   border-radius: 50%;
   border: 2px solid #52057b;
   overflow: hidden;
@@ -138,7 +114,7 @@ header {
 }
 
 .cart-item .cart-item-name {
-  font-size: 150%;
+  font-size: 110%;
   text-align: left;
   font-weight: 600;
   margin-left: 1rem;
@@ -162,6 +138,17 @@ header {
   border: none;
   background-color: transparent;
   cursor: pointer;
+}
+
+header {
+  background-color: #52057b;
+  width: 100vw;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+  padding: 0 1rem;
 }
 
 header .nav {
@@ -214,9 +201,9 @@ header .nav .btn {
 }
 
 main {
-  width: 95%;
-  margin: 5rem auto;
-  min-width: 360px;
+  width: 100%;
+  margin: 2rem auto;
+  min-width: calc(100vw - 1rem);
   z-index: 10;
 }
 
@@ -325,20 +312,6 @@ main {
   transform: scale(0.98);
 }
 
-@media (max-width: 500px) {
-  .cart {
-    width: calc(100vw - 1rem);
-    max-height: calc(100vh - 2rem);
-  }
-
-  header .nav {
-    width: 100%;
-  }
-
-  .nav .btn .circle {
-    left: 75%;
-  }
-}
 /* animations */
 .pop {
   transform-origin: center center;
@@ -373,6 +346,32 @@ main {
     transform: translate(-50%, -50%) scale(5);
     opacity: 0;
   }
+}
+@media (max-width: 500px) {
+  .cart {
+    width: calc(100vw - 1rem);
+    max-height: calc(100vh - 2rem);
+  }
+
+  header .nav {
+    width: 100%;
+  }
+
+  .nav .btn .circle {
+    left: 75%;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  margin: 0;
 }
 
 /*# sourceMappingURL=style.css.map */

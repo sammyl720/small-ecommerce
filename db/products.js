@@ -22,10 +22,10 @@ products = [
   },
   {
     "id": "4",
-    "product_image": "https://images.pexels.com/photos/191877/pexels-photo-191877.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-    "name": "Speakers",
-    "description": "Enjoy these Crystal Clear Speaker",
-    "price": "80.00"
+    "product_image": "https://images.pexels.com/photos/164829/pexels-photo-164829.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    "name": "Microphone",
+    "description": "Perfect for karaoke night",
+    "price": "90.00"
   },
   {
     "id": "5",
