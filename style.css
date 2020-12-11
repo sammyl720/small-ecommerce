@@ -9,6 +9,7 @@ body {
   background-color: #f6f5f5;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
   margin: 0;
 }
 
@@ -26,11 +27,12 @@ header{
 .cart{
   position: absolute;
   right: 0.5rem;
-  top:70px;
+  top:3rem;
   background-color: rgb(255, 255, 255);
   width: 25vw;
   min-width: 300px;
-  min-height: 100px;
+  max-height: calc(100vh - 8rem);
+  overflow-y: scroll;
   z-index: 50;
   border-radius: 0 0 5px 5px;
   box-shadow: 2px 2px 10px rgba(0,0,0,0.4), -2px 2px 10px rgba(0,0,0,0.4);
@@ -38,11 +40,29 @@ header{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding:.5rem;
-  transform: translateY(-105%);
+  padding:0.5rem;
   transition: transform 0.5s ease-in;
-
+  transform: translateY(-100%);
 }
+
+.open-cart{
+  transform: translateY(1.5rem);
+}
+
+.cart-item-dets .cart-qty-toolkit{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.5rem;
+  height: 2rem;
+}
+
+.qty-btn{
+  /* font-size: 1rem; */
+  font-size: 1rem;
+}
+
 .cart-sub-taxs, .cart-sub-total, .cart-total, .checkout{
   width: calc(100% - 2rem);
   font-size: 0.6;
@@ -73,7 +93,8 @@ header{
 }
 .cart-items{
   width: 100%;
-  padding: 1rem;
+  margin-top: 3rem;
+  padding:1rem;
   display: flex;
   flex-direction: column;
   align-items:stretch;
@@ -81,8 +102,10 @@ header{
 .cart-item{
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 100%;
-  padding: 10px 0;
+  max-height: 5rem;
+  padding: 0.5rem 0;
   border-bottom: 3px solid #52057b;
 }
 .cart-item .cart-item-img{
@@ -106,17 +129,20 @@ header{
 .cart-item .cart-item-dets{
   text-align: right;
   margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-height: 100%;
 }
 .cart-close {
   position: absolute;
-  right:10px;
-  top:2px;
+  right:0.5rem;
+  top:0.5rem;
   color:#52057b;
   outline: none;
   border: none;
   background-color: white;
   cursor: pointer;
-
 }
 header .nav{
   width: 95%;
@@ -280,6 +306,7 @@ main{
 @media(max-width:500px){
   .cart{
     width: calc(100vw - 1rem);
+    max-height: calc(100vh - 2rem);
   }
   header .nav{
     width: 100%;
@@ -287,5 +314,24 @@ main{
 
   .nav .btn .circle{
     left:75%;
+  }
+}
+
+/* animations */
+.pop{
+  transform-origin: center center;
+  transform: scale(1);
+  animation: popUp 0.5s ease-in-out;
+}
+
+@keyframes popUp{
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.5);
+  }
+  100%{
+    transform: scale(1);
   }
 }
