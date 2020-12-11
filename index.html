@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Small Online Store</title>
+  </head>
+  <body>
+    <div class="cart">
+      <button class="cart-close">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="cart-items">
+        <div class="cart-item">
+          <div style="background-image: url('https://cdn.pixabay.com/photo/2013/07/12/15/06/guitar-149427__340.png');" class="cart-item-img"></div>
+          <div class="cart-item-name">Guitar</div>
+          <div class="cart-item-dets"><span class="cart-item-qty">3</span>
+            <i class="fas fa-times"></i>
+          <span class="cart-item-price">$120</span></div>
+        </div>
+        <div class="cart-item">
+          <div style="background-image: url('https://images.pexels.com/photos/4087992/pexels-photo-4087992.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');" class="cart-item-img"></div>
+          <div class="cart-item-name">Drum Set</div>
+          <div class="cart-item-dets"><span class="cart-item-qty">1</span>
+            <i class="fas fa-times"></i>
+          <span class="cart-item-price">$100</span></div>
+        </div>
+        
+      </div>
+      <div class="cart-sub-total">
+        <small>Subtotal</small>
+        <span>$460</span>
+      </div>
+      <div class="cart-sub-taxs">
+        <small>Tax</small>
+        <span>$39</span>
+      </div>
+      <div class="cart-total">
+        <span>Total</span>
+        <span>$499</span>
+      </div>
+      <button class="btn checkout">Checkout</button>
+    </div>
+    <header>
+      <nav class="nav">
+        <div class="logo">Store</div>
+        <button class="btn" id="cart-btn">
+          <i class="fas fa-cart-plus"></i>
+          <span class="circle">4</span>
+        </button>
+      </nav>
+    </header>
+    <main>
+      <div class="products-container">
+      </div>
+    </main>
+    <script src="./db/products.js"></script>
+    <script src="script.js" ></script>
+  </body>
+</html>
