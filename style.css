@@ -58,11 +58,18 @@ header{
   height: 2rem;
 }
 
+.cart-item-dets .cart-item-price{
+  width: 3.7rem;
+}
 .qty-btn{
   /* font-size: 1rem; */
   font-size: 1rem;
+  border:none;
+  background-color: transparent;
 }
-
+.qty-btn:focus{
+  outline: none;
+}
 .cart-sub-taxs, .cart-sub-total, .cart-total, .checkout{
   width: calc(100% - 2rem);
   font-size: 0.6;
@@ -146,13 +153,14 @@ header{
 }
 header .nav{
   width: 95%;
-  height: 100%;
+  height: 5rem;
   margin:auto;
   min-width: 350px;
   padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
   color:white;
 }
 
@@ -265,6 +273,7 @@ main{
   transform: translateY(0);
 }
 
+
 .card .product-info{
   display: flex;
   width: 100%;
@@ -281,7 +290,7 @@ main{
   font-weight: 500;
 }
 
-.card-content .btn{
+.card-content .add-to-cart{
   color:white;
   background-color: #52057b;
   border:none;
@@ -289,7 +298,9 @@ main{
   padding: .5rem 1rem;
   border-radius: 5px;
   font-weight: 600;
+  position: relative;
 }
+
 
 .btn{
   cursor: pointer;
@@ -333,5 +344,23 @@ main{
   }
   100%{
     transform: scale(1);
+  }
+}
+
+.ripple{
+  opacity: 1;
+  width: 15px;
+  height: 15px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%) scale(0);
+  animation: ripple 0.5s ease-in;
+}
+
+@keyframes ripple{
+  to {
+    transform: translate(-50%, -50%) scale(5);
+    opacity: 0;
   }
 }

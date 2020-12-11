@@ -62,6 +62,16 @@ function addProductToDom(product){
   })
   addToCartBtn.addEventListener('click', (e) => {
     addProductToCart(product)
+    const {offsetX, offsetY} = e;
+    const rippleCircle = document.createElement('span')
+    rippleCircle.classList.add('ripple')
+    rippleCircle.style.top = `${offsetY}px`
+    rippleCircle.style.left = `${offsetX}px`
+    addToCartBtn.appendChild(rippleCircle);
+    setTimeout(() => {
+      rippleCircle.remove()
+    }, 500);
+    console.log(offsetX, offsetY)
   })
   productContainer.appendChild(newProduct);
 }
@@ -79,23 +89,33 @@ function addProductToCart(product){
     }, 600);
     qtyCircle.innerHTML = cart.cartQty;
   }
-  cartItemsEl.innerHTML = cart.cart.map(cartItem => {
-    return `
-    <div class="cart-item">
+  cartItemsEl.innerHTML = '';
+  cart.cart.forEach(cartItem => {
+    let itemEl = document.createElement('div')
+    itemEl.classList.add('cart-item')
+    itemEl.innerHTML = `
       <div style="background-image: url(${cartItem.product_image});" class="cart-item-img"></div>
       <div class="cart-item-name">${cartItem.name}</div>
       <div class="cart-item-dets">
         <div class='cart-qty-toolkit'>
-        <i class='fas fa-sort-up cart-qty-increase qty-btn'></i>
+        <button class='cart-qty-increase qty-btn'>
+          <i class='fas fa-sort-up'></i>
+        </button>
         <span class="cart-item-qty">${cartItem.qty}</span>
-        <i class='fas fa-sort-down cart-qty-decrease qty-btn'>
+        <button class='cart-qty-decrease qty-btn'>
+          <i class='fas fa-sort-down'>
         </i>
+        </button>
         </div>
       <span class="cart-item-price">$${parseInt(cartItem.price)} <small>ea.</small></span></div>
     </div>
-    </div>
-    `;
-  }).join('') + `
+    `
+
+    let incrementQtyBtn = itemEl.querySelector('.cart-qty-increase')
+    let decrementtQtyBtn = itemEl.querySelector('.cart-qty-decrease')
+    cartItemsEl.appendChild(itemEl)
+  })
+  cartItemsEl.innerHTML += `
   <div class="cart-sub-total">
       <small>Subtotal</small>
       <span>$${subTotal.toFixed(2)}</span>
