@@ -12,9 +12,9 @@
   margin:auto;
   height: 80%;
   opacity: 1;
-  box-shadow: 5px 5px 10px rgba($color: #000000, $alpha: 0.5), -5px -5px 10px rgba($color: #000000, $alpha: 0.5);
+  box-shadow: 3px 3px 10px rgba($color: #000000, $alpha: 0.3), -3px -3px 10px rgba($color: #000000, $alpha: 0.3);
   background-color: white;
-  top:50%;
+  top:51%;
   left:50%;
   transform: translate(-50%, -50%);
   border-radius: 10px;
@@ -85,12 +85,12 @@
     }
   }
   .checkout-totals{
-    background-color: #52057b0e;
     width: 100%;
     max-width: 500px;
-    margin: auto;
     padding: 1rem;
     display: flex;
+    flex:1;
+    margin:1rem auto;
     flex-direction: column;
     justify-content: space-between;
     div{

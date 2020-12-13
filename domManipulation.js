@@ -97,7 +97,7 @@ function addProductToDom(product){
       <p class="product-description">
         ${product.description}
       </p>
-      <button class="btn btn-large add-to-cart">Add To Cart</button>
+      <button class="btn btn-large add-to-cart">Add To Cart <i class='fas fa-plus'></i></button>
     </div>
   `
 
@@ -181,7 +181,6 @@ function addCartToCheckout(cart){
   const checkItemsCount = checkoutItemsEl.childElementCount;
   const heightPerItem = checkoutItemsEl.scrollHeight / checkItemsCount;
   let heightFromTop = 1;
-  console.log(checkoutItemsEl.scrollHeight, checkoutItemsEl)
   for(let i = 1; i < checkItemsCount; i++){
     setTimeout(() => {
       checkoutItemsEl.scrollTo({
@@ -191,8 +190,9 @@ function addCartToCheckout(cart){
       });
       console.log(heightFromTop, heightPerItem)
       heightFromTop++;
-    }, i * 2000);
+    }, i * 1500);
   }
+  
   checkoutContainer.querySelector('.close-btn').addEventListener('click', (e) => {
     checkoutContainer.classList.add('hidden')
   })

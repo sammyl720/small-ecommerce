@@ -84,8 +84,12 @@
   transition: transform 0.5s ease;
 }
 
+.add-to-cart .fas-plus{
+  margin-left: 1.5rem;
+}
+
 .card-content .add-to-cart:active{
   background-color: #52057b89;
-  transform: scale(0.98) translateY(-5px);
-  box-shadow: 1px 5px 12px rgba($color: #000000, $alpha: 0.2);
+  transform: scale(0.98) translateY(-2px);
+  box-shadow: 1px 1px 12px rgba($color: #000000, $alpha: 0.1);
 }
