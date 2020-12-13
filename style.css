@@ -169,11 +169,10 @@ header .nav {
 header .nav .btn {
   font-size: 30px;
   font-weight: 900;
-  /* letter-spacing: 0.2; */
   border: none;
-  background-color: red;
   color: white;
   position: relative;
+  background-color: transparent;
 }
 
 .nav .btn .circle {
@@ -363,6 +362,7 @@ main {
 
   header .nav .btn {
     position: absolute;
+    max-width: 2.8rem;
     right: 0.5rem;
   }
 
