@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap");
 .cart {
-  position: absolute;
+  position: fixed;
   right: 0.5rem;
   top: 2.8rem;
   background-color: white;
@@ -152,6 +152,7 @@ header {
   width: 100vw;
   height: 70px;
   z-index: 99;
+  position: fixed;
 }
 
 header .nav {
@@ -419,7 +420,7 @@ main {
 .checkout-container.active {
   visibility: visible;
   z-index: 999;
-  position: absolute;
+  position: fixed;
   width: 80%;
   min-width: 350px;
   max-width: 500px;
