@@ -104,18 +104,11 @@ function addProductToDom(product){
   const cardContent = newProduct.querySelector('.card-content');
   const closeBtn = newProduct.querySelector('.content-close');
   const addToCartBtn = newProduct.querySelector('.add-to-cart')
-  prodImage.addEventListener('mouseenter', () => {
-    cardContent.style.transform = 'translateY(-280px)';
-    prodImage.classList.add('darken')
-  })
   prodImage.addEventListener('click', () => {
     cardContent.style.transform = 'translateY(-280px)';
     prodImage.classList.add('darken')
   })
-  cardContent.addEventListener('mouseleave', () => {
-    cardContent.style.transform = 'translateY(0)';
-    prodImage.classList.remove('darken')
-  })
+
   closeBtn.addEventListener('click', () => {
     cardContent.style.transform = 'translateY(0)';
     prodImage.classList.remove('darken')

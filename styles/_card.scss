@@ -81,4 +81,10 @@
   border-radius: 5px;
   font-weight: 600;
   position: relative;
+  transition: transform 0.5s ease;
+}
+
+.card-content .add-to-cart:active{
+  background-color: #52057b8c;
+  transform: scale(0.9);
 }

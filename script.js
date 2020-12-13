@@ -6,7 +6,11 @@ if(cart.cartQty === 0){
   qtyCircle.style.display = 'hidden';
 }
 
-function slideCartWindow (open = true) {
+function slideCartWindow (toggle = false) {
+  if(toggle){
+    cartEl.classList.toggle('open-cart');
+    return;
+  }
   if(cartItemsEl.childElementCount){
     cartEl.classList.add('open-cart');
   } else {
@@ -18,8 +22,7 @@ cartBtn.addEventListener('click', () => {
 })
 
 cartClose.addEventListener('click', () => {
-  console.log('clicked')
-  slideCartWindow(false)
+  slideCartWindow(true)
 })
 
 for(let i = 0; i < products.length;i++){

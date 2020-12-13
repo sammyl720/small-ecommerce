@@ -22,7 +22,7 @@ header .nav{
   color:white;
 }
 
-header .nav .logo{
+header .nav{
   font-size: 32px;
   font-weight: 900;
   letter-spacing: 0.2;
@@ -36,7 +36,6 @@ header .nav .btn{
   background-color: transparent;
   color:white;
   position: relative;
-  margin-left: auto;
 }
 
 .nav .btn .circle{
@@ -46,8 +45,8 @@ header .nav .btn{
   align-items: center;
   justify-content: center;
   position: absolute;
-  right:-0.25rem;
-  top: -0.3rem;
+  right:-0.5rem;
+  top: -0.25rem;
   font-size: 0.8rem;
   border-radius: 50%;
   background-color: white;

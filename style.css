@@ -163,7 +163,7 @@ header .nav {
   color: white;
 }
 
-header .nav .logo {
+header .nav {
   font-size: 32px;
   font-weight: 900;
   letter-spacing: 0.2;
@@ -177,7 +177,6 @@ header .nav .btn {
   background-color: transparent;
   color: white;
   position: relative;
-  margin-left: auto;
 }
 
 .nav .btn .circle {
@@ -187,8 +186,8 @@ header .nav .btn {
   align-items: center;
   justify-content: center;
   position: absolute;
-  right: -0.25rem;
-  top: -0.3rem;
+  right: -0.5rem;
+  top: -0.25rem;
   font-size: 0.8rem;
   border-radius: 50%;
   background-color: white;
@@ -297,6 +296,12 @@ main {
   border-radius: 5px;
   font-weight: 600;
   position: relative;
+  transition: transform 0.5s ease;
+}
+
+.card-content .add-to-cart:active {
+  background-color: #52057b8c;
+  transform: scale(0.9);
 }
 
 .btn {
@@ -358,7 +363,8 @@ main {
   }
 
   .nav .btn .circle {
-    left: 75%;
+    right: 2rem;
+    top: -0.25rem;
   }
 }
 * {
