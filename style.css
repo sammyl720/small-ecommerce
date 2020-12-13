@@ -154,7 +154,7 @@ header .nav {
   width: 80%;
   height: 5rem;
   margin: auto;
-  min-width: 360px;
+  min-width: 320px;
   padding: 0 1rem;
   display: flex;
   justify-content: space-between;
@@ -358,6 +358,7 @@ main {
 
   header .nav {
     width: 100%;
+    padding: 1rem;
   }
 
   header .nav .btn {
