@@ -4,10 +4,11 @@
   z-index: 999;
   position: absolute;
   width: 80%;
-  min-width: 320px;
+  min-width: 350px;
   max-width: 500px;
   // overflow: hidden;
   transition: transform 0.5s ease-in;
+  transition: opacity 0.5s ease-in;
   margin:auto;
   height: 80%;
   opacity: 1;
@@ -37,6 +38,19 @@
     height: 18rem;
     width: 100%;
     overflow-x: scroll;
+    &::-webkit-scrollbar {
+      width: 0.3rem;
+    }
+    
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1; 
+    }
+     
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background:#52057b; 
+    }
     position: relative;
     .checkout-item {
       width: 100%;
@@ -93,6 +107,8 @@
     margin: 1rem auto;
     background-color: #52057b;
     color: white;
+    font-weight: 800;
+    font-size: 1.2rem; 
     border:none;
     display: block;
     border-radius: 5px;
@@ -105,8 +121,11 @@
 .checkout-container.hidden{
   opacity: 0;
   visibility: hidden;
+  transition: transform 0.5s ease-in;
+  transform: translate(-140%, -50%);
 }
 
 .checkout-container{
-  transform: translateX(-140%);
+  transform: translate(-140%, -50%);
+  transition: transform 0.5s ease-in;
 }

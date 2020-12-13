@@ -37,6 +37,7 @@ document.addEventListener('click', (e) => {
   } else if(e.target.matches('i.fa-sort-down')){
     adjustCartItemCount(e.target, cart, false);
   } else if(e.target.matches('.btn.checkout')){
+    slideCartWindow(false, true);
     addCartToCheckout(cart);
   }
 })

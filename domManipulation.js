@@ -177,7 +177,22 @@ function addCartToCheckout(cart){
     </div>
     <button class="order-btn">ORDER</button>
   `
-
+  const checkoutItemsEl = checkoutContainer.querySelector('.checkout-items')
+  const checkItemsCount = checkoutItemsEl.childElementCount;
+  const heightPerItem = checkoutItemsEl.scrollHeight / checkItemsCount;
+  let heightFromTop = 1;
+  console.log(checkoutItemsEl.scrollHeight, checkoutItemsEl)
+  for(let i = 1; i < checkItemsCount; i++){
+    setTimeout(() => {
+      checkoutItemsEl.scrollTo({
+        top: heightPerItem * heightFromTop,
+        left:0,
+        behavior: 'smooth'
+      });
+      console.log(heightFromTop, heightPerItem)
+      heightFromTop++;
+    }, i * 2000);
+  }
   checkoutContainer.querySelector('.close-btn').addEventListener('click', (e) => {
     checkoutContainer.classList.add('hidden')
   })
