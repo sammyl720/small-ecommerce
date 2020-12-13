@@ -20,7 +20,29 @@ class Cart{
     }
     return this.getCartQty()
   }
+  
+  adjustProductQty(id, amount){
+    let product = this.getProductById(id)
+    if(product){
+      product.qty += amount;
+    } else {
+      return null;
+    }
+    if(product.qty < 1){
+      this.removeProductFromCart(product, 0);
+    }
 
+    return product;
+  }
+
+  getProductById(id) {
+    const productExists = this.cart.findIndex((prod) => prod.id === id)
+    if(productExists !== -1){
+      return this.cart[productExists]
+    } else {
+      return null;
+    }
+  }
   getCartQty(){
     this.cartQty = 0;
     this.cart.forEach(p => this.cartQty += p.qty);
@@ -40,6 +62,7 @@ class Cart{
   }
 
   getCartTotal(){
+    this.getCartQty()
     this.subTotal = 0;
     this.cart.forEach(product => {
       this.subTotal += product.price * product.qty;
