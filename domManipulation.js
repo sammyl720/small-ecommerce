@@ -31,6 +31,7 @@ function updateCartDom() {
     <div style="background-image: url(${cartItem.product_image});" class="cart-item-img"></div>
       <div class="cart-item-name">${cartItem.name}</div>
         <div class="cart-item-dets">
+        <span class="cart-item-price">$${parseInt(cartItem.price)} <small>ea.</small></span>
           <div class='cart-qty-toolkit'>
             <button class='cart-qty-increase qty-btn' id='incre-prod-${cartItem.id}'>
               <i class='fas fa-sort-up'></i>
@@ -41,7 +42,6 @@ function updateCartDom() {
 </i>
             </button>
           </div>
-          <span class="cart-item-price">$${parseInt(cartItem.price)} <small>ea.</small></span>
         </div>
       </div>
     </div>

@@ -8,15 +8,17 @@
     padding:0.5rem;
     margin: auto;
   }
-
   header .nav .btn{
     max-width: 2.8rem;
     margin-right:0.5rem;
+    padding:0;
   }
   .cart-qty-toolkit{
     font-size: 1rem;
     margin-right: 1rem;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 3rem;
   }
   .qty-btn{
     max-width: 2rem;
