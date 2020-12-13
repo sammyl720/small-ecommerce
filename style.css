@@ -377,8 +377,9 @@ main {
     margin: 0;
   }
 
-  .card {
+  .products-container .card {
     margin: 1rem auto;
+    width: 96%;
   }
 }
 * {
