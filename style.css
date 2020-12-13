@@ -368,7 +368,6 @@ main {
 
   header .nav .btn {
     max-width: 2.8rem;
-    margin-right: 0.5rem;
     padding: 0;
   }
 
@@ -377,17 +376,21 @@ main {
     margin-right: 1rem;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     max-width: 3rem;
   }
 
   .qty-btn {
     max-width: 2rem;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 
-  .qty-btn i {
+  .cart-qty-toolkit .qty-btn i {
     position: relative;
-    left: -75%;
     font-size: 1.5rem;
   }
 
