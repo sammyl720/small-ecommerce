@@ -357,6 +357,10 @@ main {
   }
 }
 @media (max-width: 500px) {
+  .checkout-container.active {
+    width: 98%;
+  }
+
   .cart {
     width: calc(100vw - 1rem);
     max-height: calc(100vh - 2rem);
