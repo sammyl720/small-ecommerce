@@ -11,13 +11,15 @@
 
   header .nav .btn{
     max-width: 2.8rem;
+    margin-right:0.1rem;
   }
   .qty-btn{
-    background-color: red;
+    max-width: 1.65rem;
+    margin: 0 0.05rem;
   }
   .nav .btn .circle{
-    right:-0.43rem;
-    top:-0.43rem;
+    right:-0.48rem;
+    top:-0.48rem;
   }
 
   .products-container{
