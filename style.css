@@ -361,9 +361,7 @@ main {
   }
 
   header .nav .btn {
-    position: absolute;
     max-width: 2.8rem;
-    right: 0.5rem;
   }
 
   .nav .btn .circle {
