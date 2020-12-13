@@ -28,9 +28,13 @@
 .cart-item-dets .cart-qty-toolkit {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   width: 3rem;
   margin-right: 0.25rem;
+}
+
+.cart-qty-toolkit button {
+  width: 1rem;
 }
 
 .cart-item-qty {
@@ -364,12 +368,24 @@ main {
 
   header .nav .btn {
     max-width: 2.8rem;
-    margin-right: 0.3rem;
+    margin-right: 0.5rem;
+  }
+
+  .cart-qty-toolkit {
+    font-size: 1rem;
+    margin-right: 1rem;
+    justify-content: space-evenly;
   }
 
   .qty-btn {
-    max-width: 1.5rem;
-    margin: 0 auto;
+    max-width: 2rem;
+    position: relative;
+  }
+
+  .qty-btn i {
+    position: relative;
+    left: -75%;
+    font-size: 1.5rem;
   }
 
   .nav .btn .circle {

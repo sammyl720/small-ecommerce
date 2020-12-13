@@ -27,9 +27,13 @@
 .cart-item-dets .cart-qty-toolkit{
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   width: 3rem;
   margin-right: 0.25rem;
+}
+
+.cart-qty-toolkit button{
+  width: 1rem;
 }
 .cart-item-qty{
   width: .5rem;
