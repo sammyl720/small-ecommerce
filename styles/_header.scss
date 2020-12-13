@@ -2,31 +2,26 @@ header{
   background-color: #52057b;
   width: 100vw;
   height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
   z-index: 99;
-  padding:0 1rem;
 }
 
 
 header .nav{
-  width: 98%;
+  width: 80%;
   height: 5rem;
   margin:auto;
-  min-width: 350px;
-  padding: 1rem 0.5rem;
+  min-width: 360px;
+  padding: 0 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   color:white;
-}
-
-header .nav{
   font-size: 32px;
   font-weight: 900;
   letter-spacing: 0.2;
-
 }
 header .nav .btn{
   font-size: 30px;
@@ -38,6 +33,7 @@ header .nav .btn{
   position: relative;
 }
 
+
 .nav .btn .circle{
   display: flex;
   width: 1.2rem;
@@ -45,8 +41,8 @@ header .nav .btn{
   align-items: center;
   justify-content: center;
   position: absolute;
-  right:-0.5rem;
-  top: -0.25rem;
+  top:-0.33rem;
+  right: -0.33rem;
   font-size: 0.8rem;
   border-radius: 50%;
   background-color: white;

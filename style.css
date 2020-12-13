@@ -30,6 +30,7 @@
   align-items: center;
   justify-content: center;
   width: 3rem;
+  margin-right: 0.25rem;
 }
 
 .cart-item-qty {
@@ -48,10 +49,12 @@
   color: #52057b;
   position: relative;
   background-color: transparent;
+  font-size: larger;
+  cursor: pointer;
 }
 
-.qty-btn:focus {
-  outline: none;
+.qty-btn i {
+  font-size: 1.5rem;
 }
 
 .cart-sub-taxs, .cart-sub-total, .cart-total, .checkout {
@@ -144,26 +147,19 @@ header {
   background-color: #52057b;
   width: 100vw;
   height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   z-index: 99;
-  padding: 0 1rem;
 }
 
 header .nav {
-  width: 98%;
+  width: 80%;
   height: 5rem;
   margin: auto;
-  min-width: 350px;
-  padding: 1rem 0.5rem;
+  min-width: 360px;
+  padding: 0 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: white;
-}
-
-header .nav {
   font-size: 32px;
   font-weight: 900;
   letter-spacing: 0.2;
@@ -186,8 +182,8 @@ header .nav .btn {
   align-items: center;
   justify-content: center;
   position: absolute;
-  right: -0.5rem;
-  top: -0.25rem;
+  top: -0.33rem;
+  right: -0.33rem;
   font-size: 0.8rem;
   border-radius: 50%;
   background-color: white;
@@ -207,14 +203,17 @@ main {
 }
 
 .products-container {
+  width: 80%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  min-width: 360px;
+  margin: auto;
 }
 
 .card {
-  width: 400px;
+  width: 360px;
   height: 280px;
   position: relative;
   background-color: #fff;
@@ -257,11 +256,10 @@ main {
 .card .card-content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding: 1rem;
   height: 280px;
   font-size: 1.5rem;
-  line-height: 0.9;
   text-align: center;
   z-index: 3;
   background-color: rgba(255, 255, 255, 0.8);
@@ -363,8 +361,8 @@ main {
   }
 
   .nav .btn .circle {
-    right: 2rem;
-    top: -0.25rem;
+    right: -0.33rem;
+    top: -0.33rem;
   }
 }
 * {
@@ -373,7 +371,7 @@ main {
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: aliceblue;
+  background-color: #6155a6;
   display: flex;
   flex-direction: column;
   overflow-x: hidden;

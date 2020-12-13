@@ -29,6 +29,7 @@
   align-items: center;
   justify-content: center;
   width: 3rem;
+  margin-right: 0.25rem;
 }
 .cart-item-qty{
   width: .5rem;
@@ -45,13 +46,15 @@
   color:#52057b;
   position: relative;
   background-color: transparent;
-  
+  font-size: larger;
+  cursor: pointer;
+
 }
 
-
-.qty-btn:focus{
-  outline: none;
+.qty-btn i {
+  font-size: 1.5rem;
 }
+
 .cart-sub-taxs, .cart-sub-total, .cart-total, .checkout{
   width: calc(100% - 2rem);
   font-size: 0.6;

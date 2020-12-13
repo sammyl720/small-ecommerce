@@ -4,7 +4,7 @@ const cartBtn = document.querySelector('#cart-btn')
 const cartEl = document.querySelector('.cart')
 const cartItemsEl = document.querySelector('.cart-items')
 const cartClose = document.querySelector('.cart-close')
-const qtyCircle = document.querySelector('#cart-btn .circle')
+const qtyCircle = document.querySelector('.nav .circle')
 
 function updateCartDom() {
   const {total, subTotal, taxTotal} = cart.getCartTotal()
