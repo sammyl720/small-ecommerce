@@ -5,6 +5,7 @@ const cartEl = document.querySelector('.cart')
 const cartItemsEl = document.querySelector('.cart-items')
 const cartClose = document.querySelector('.cart-close')
 const qtyCircle = document.querySelector('.nav .circle')
+const checkoutContainer = document.getElementById('checkout')
 
 function updateCartDom() {
   const {total, subTotal, taxTotal} = cart.getCartTotal()
@@ -132,4 +133,52 @@ function adjustCartItemCount(target, cart, increase){
   let id = target.parentElement.parentElement.parentElement.parentElement.dataset.id;
   let prod = cart.adjustProductQty(id, increase ? 1: -1);
   updateCartDom()
+}
+
+function addCartToCheckout(cart){
+  checkoutContainer.classList.remove('hidden');
+  checkoutContainer.classList.add('active');
+  const crtTotals = cart.getCartTotal()
+  checkoutContainer.innerHTML = `
+  <span class="close-btn">
+      <i class="fas fa-times"></i>
+    </span>
+    <div class="checkout-items">
+      ${cart.cart.map(cartItm => {
+        return `
+        <div class="checkout-item" style='background-image: url(${cartItm.product_image})'>
+          <div class="checkout-item-content">
+            <span class="qty">${cartItm.qty}</span>
+          <h3 class="checkout-item-title">
+            ${cartItm.name}
+          </h3>
+          <div class="checkout-item-details">
+            <span class="per-item-price">$${cartItm.price} each</span>
+            <span class="item-total">$${cartItm.qty * cartItm.price}</span>
+          </div>
+          </div>
+        </div>
+        `
+      }).join('')}
+    </div>
+    <div class="checkout-totals">
+      <div class="checkout-subtotal">
+        <strong>Subtotal</strong>
+        <span>${crtTotals.subTotal.toFixed(2)}</span>
+      </div>
+      <div class="checkout-taxes">
+        <strong>Taxes</strong>
+        <span>${crtTotals.taxTotal.toFixed(2)}</span>
+      </div>
+      <div class="checkout-total">
+        <strong>Total</strong>
+        <span>$${crtTotals.total.toFixed(2)}</span>
+      </div>
+    </div>
+    <button class="order-btn">ORDER</button>
+  `
+
+  checkoutContainer.querySelector('.close-btn').addEventListener('click', (e) => {
+    checkoutContainer.classList.add('hidden')
+  })
 }
