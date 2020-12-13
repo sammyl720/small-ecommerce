@@ -306,13 +306,13 @@ main {
   transform: scale(0.9);
 }
 
-.btn {
-  cursor: pointer;
-  outline: none;
+.btn, button {
+  cursor: pointer !important;
+  outline: none !important;
 }
 
-.btn:focus {
-  outline: none;
+.btn:focus, button:focus {
+  outline: none !important;
 }
 
 .btn:active {

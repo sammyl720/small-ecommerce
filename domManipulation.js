@@ -124,7 +124,6 @@ function addProductToDom(product){
     setTimeout(() => {
       rippleCircle.remove()
     }, 500);
-    console.log(offsetX, offsetY)
   })
   productContainer.appendChild(newProduct);
 }
@@ -132,6 +131,5 @@ function addProductToDom(product){
 function adjustCartItemCount(target, cart, increase){
   let id = target.parentElement.parentElement.parentElement.parentElement.dataset.id;
   let prod = cart.adjustProductQty(id, increase ? 1: -1);
-  console.log(prod);
   updateCartDom()
 }

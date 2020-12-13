@@ -30,6 +30,9 @@ for(let i = 0; i < products.length;i++){
 }
 
 document.addEventListener('click', (e) => {
+  if(e.target.matches('.qty-btn')){
+    e.target.firstElementChild.click()
+  }
   if(e.target.matches('i.fa-sort-up')){
     adjustCartItemCount(e.target, cart, true);
   } else if(e.target.matches('i.fa-sort-down')){
